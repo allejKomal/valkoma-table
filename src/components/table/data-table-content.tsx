@@ -2,7 +2,7 @@
 
 import type { Table } from "@tanstack/react-table"
 import { flexRender } from "@tanstack/react-table"
-import { TableCell, TableRow } from "../ui/table" // Adjust path/imports as needed
+import { TableCell, TableRow } from "../ui/table"
 import type { ExtendedColumnDef } from "./column"
 
 interface ContentProps<TData> {

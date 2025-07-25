@@ -1,8 +1,6 @@
 import type { ColumnDef } from '@tanstack/react-table';
 import type { Bookmark } from './bookmark.type';
 import { DataTableColumnHeader } from './table-column-header';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '../ui/hover-card';
-import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 import { Badge } from '../ui/badge';
 import { Star } from 'lucide-react';

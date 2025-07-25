@@ -25,11 +25,10 @@ export function DataTableProps({
     config: ConfigType
     setConfig: React.Dispatch<React.SetStateAction<ConfigType>>
 }) {
-    // Function to handle the toggle of config options
     const handleConfigToggle = (key: keyof ConfigType) => {
         setConfig((prevConfig) => ({
             ...prevConfig,
-            [key]: !prevConfig[key], // Toggle the specific key
+            [key]: !prevConfig[key],
         }))
     }
 
