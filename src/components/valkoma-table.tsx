@@ -21,7 +21,7 @@ export function ValkomaTable<TData>({
 
     return (
         <div className="flex-1 overflow-x-auto border rounded-lg">
-            <div className="scroll-container w-full max-h-[550px] overflow-y-auto">
+            <div className="scroll-container w-full h-[550px] overflow-y-auto">
                 <TableComponent className="table-fixed w-full">
                     <DataTableHeader table={table} />
                     <TableBody>
