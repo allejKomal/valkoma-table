@@ -11,6 +11,7 @@ import { DataTableProps } from "./table/data-table-props"
 
 import { useState } from "react"
 import type { configType } from "./table/config.type"
+import { ModeToggle } from "./mode-toggle"
 
 export function TableWrapper() {
     const [config, setConfig] = useState<configType>
@@ -37,6 +38,7 @@ export function TableWrapper() {
                 <div className="flex items-center gap-2">
                     <DataTableViewOptions table={table} />
                     <DataTableProps setConfig={setConfig} config={config} />
+                    <ModeToggle />
                 </div>
             </div>
             <div className="flex flex-col gap-4">

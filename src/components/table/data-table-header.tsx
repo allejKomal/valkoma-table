@@ -11,9 +11,9 @@ interface HeaderProps<TData> {
 
 export function DataTableHeader<TData>({ table }: HeaderProps<TData>) {
     return (
-        <TableHeaderPrimitive   >
+        <TableHeaderPrimitive>
             {table.getHeaderGroups().map((headerGroup) => (
-                <TableRow key={headerGroup.id} className="bg-gray-100 border-b">
+                <TableRow key={headerGroup.id} className="border-b">
                     {headerGroup.headers.map((header) => {
                         const headerAlign = (header.column.columnDef as ExtendedColumnDef<TData>).headerAlign ?? 'left';
                         const alignClass =
@@ -27,7 +27,7 @@ export function DataTableHeader<TData>({ table }: HeaderProps<TData>) {
                             <TableHead
                                 key={header.id}
                                 style={{ width: header.getSize() }}
-                                className={`px-2 py-2 whitespace-nowrap sticky top-0 bg-white z-10 border-b ${alignClass}`}
+                                className={`px-2 py-2  bg-background whitespace-nowrap sticky top-0 z-10 border-b ${alignClass}`}
                             >
                                 {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                             </TableHead>
