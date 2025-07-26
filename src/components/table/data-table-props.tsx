@@ -1,15 +1,15 @@
 "use client"
 
-import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
-import { Settings, } from "lucide-react"
+import { Settings } from "lucide-react"
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
+    DropdownMenuTrigger,
     DropdownMenuContent,
     DropdownMenuLabel,
     DropdownMenuSeparator,
-} from "../ui/dropdown-menu"
-import { Button } from "../ui/button"
+    Button,
+} from "valkoma-package/primitive"
 
 export interface ConfigType {
     enableRowSelection: boolean
@@ -38,7 +38,7 @@ export function DataTableProps({
                 <Button
                     variant="outline"
                     size="sm"
-                    className="ml-auto hidden h-8 lg:flex"
+                    className="ml-auto h-8 lg:flex text-sm"
                 >
                     <Settings />
                     Config

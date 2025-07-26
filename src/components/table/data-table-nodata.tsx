@@ -1,6 +1,6 @@
 "use client"
 
-import { TableRow, TableCell } from "../ui/table"
+import { TableRow, TableCell } from "valkoma-package/primitive"
 
 interface NoDataProps {
     columnsLength: number

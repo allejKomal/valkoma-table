@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useReactTable, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, type ColumnFiltersState, type PaginationState, type RowSelectionState, type SortingState, type VisibilityState } from "@tanstack/react-table";
 import { bookmarkColumns, type ExtendedColumnDef } from "./column";
-import { Checkbox } from "../ui/checkbox";
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { RadioGroup, RadioGroupItem, Checkbox } from "valkoma-package/primitive";
 import type { configType } from "./config.type";
 import type { Bookmark } from "./bookmark.type";
 
@@ -37,18 +36,22 @@ export function useTable(data: Bookmark[], config: configType) {
                 id: "select",
                 header: ({ table }) => (
                     <div className="flex items-center justify-center h-full">
-                        {config.enableMultiRowSelection && <Checkbox
-                            checked={table.getIsAllPageRowsSelected() ||
-                                (table.getIsSomePageRowsSelected() && "indeterminate")}
-                            onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-                            aria-label="Select all"
-                        />}
+                        {config.enableMultiRowSelection &&
+                            <Checkbox
+                                className="!border-black/30 dark:!border-white/30"
+                                checked={table.getIsAllPageRowsSelected() ||
+                                    (table.getIsSomePageRowsSelected() && "indeterminate")}
+                                onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+                                aria-label="Select all"
+                            />
+                        }
                     </div>
                 ),
                 cell: ({ row }) => (
                     <div className="flex items-center justify-center h-full">
                         {config.enableMultiRowSelection ? (
                             <Checkbox
+                                className="!border-black/30 dark:!border-white/30"
                                 checked={row.getIsSelected()}
                                 onCheckedChange={(value) => row.toggleSelected(!!value)}
                                 aria-label="Select row"
@@ -58,7 +61,7 @@ export function useTable(data: Bookmark[], config: configType) {
                                 value={rowSelection[row.id] ? row.id : ""}
                                 onValueChange={(value) => setRowSelection({ [value]: true })}
                             >
-                                <RadioGroupItem value={row.id} />
+                                <RadioGroupItem value={row.id} className="[&_svg]:!size-2 border-red-100" />
                             </RadioGroup>
                         )}
                     </div>

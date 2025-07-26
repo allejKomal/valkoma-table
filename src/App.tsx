@@ -1,13 +1,16 @@
 import './App.css'
+import { TooltipProvider } from 'valkoma-package/primitive'
 import { TableWrapper } from './components/table-wrapper'
-import { ThemeProvider } from './components/theme-provider'
+import { ThemeProvider } from 'valkoma-package/hooks'
 
 function App() {
 
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <TableWrapper />
-    </ThemeProvider>
+    <TooltipProvider>
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+        <TableWrapper />
+      </ThemeProvider>
+    </TooltipProvider>
   )
 }
 

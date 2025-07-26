@@ -1,8 +1,7 @@
 "use client"
 
-import type { Table } from "@tanstack/react-table"
-import { flexRender } from "@tanstack/react-table"
-import { TableCell, TableRow } from "../ui/table"
+import { flexRender, type Table } from "@tanstack/react-table"
+import { TableCell, TableRow } from "valkoma-package/primitive"
 import type { ExtendedColumnDef } from "./column"
 
 interface ContentProps<TData> {

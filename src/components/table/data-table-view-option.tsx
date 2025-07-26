@@ -1,10 +1,16 @@
 "use client"
 
-import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 import type { Table } from "@tanstack/react-table"
 import { Settings2 } from "lucide-react"
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator } from "../ui/dropdown-menu"
-import { Button } from "../ui/button"
+import {
+    DropdownMenu,
+    DropdownMenuTrigger,
+    DropdownMenuCheckboxItem,
+    DropdownMenuContent,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    Button
+} from "valkoma-package/primitive"
 
 
 export function DataTableViewOptions<TData>({
@@ -18,7 +24,7 @@ export function DataTableViewOptions<TData>({
                 <Button
                     variant="outline"
                     size="sm"
-                    className="ml-auto hidden h-8 lg:flex"
+                    className="ml-auto h-8 lg:flex text-sm"
                 >
                     <Settings2 />
                     View

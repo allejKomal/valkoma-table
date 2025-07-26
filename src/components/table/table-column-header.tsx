@@ -1,7 +1,13 @@
 import { cn } from "@/lib/utils"
 import { ArrowDown, ArrowUp, ChevronsUpDown, EyeOff } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu"
-import { Button } from "../ui/button"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+    Button
+} from "valkoma-package/primitive"
 import type { Column } from "@tanstack/react-table"
 
 interface DataTableColumnHeaderProps<TData, TValue>
@@ -26,7 +32,7 @@ export function DataTableColumnHeader<TData, TValue>({
                     <Button
                         variant="ghost"
                         size="sm"
-                        className="data-[state=open]:bg-accent -ml-3 h-8"
+                        className="data-[state=open]:bg-accent -ml-3 h-8 text-sm"
                     >
                         <span>{title}</span>
                         {column.getIsSorted() === "desc" ? (

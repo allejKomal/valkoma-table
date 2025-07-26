@@ -1,17 +1,15 @@
 "use client"
 
+import { useState } from "react"
 import { ValkomaTable } from "./valkoma-table"
-import { Input } from "./ui/input"
+import { Input } from "valkoma-package/primitive"
 import { DataTableViewOptions } from "./table/data-table-view-option"
 import { useTable } from "./table/use-table"
 import { bookmarksData } from "./table/data"
 import { DataTablePagination } from "./table/data-table-pagination"
 import { DataTableProps } from "./table/data-table-props"
-
-
-import { useState } from "react"
 import type { configType } from "./table/config.type"
-import { ModeToggle } from "./mode-toggle"
+import { ModeToggle } from "valkoma-package/design-system"
 
 export function TableWrapper() {
     const [config, setConfig] = useState<configType>

@@ -1,8 +1,7 @@
 import type { ColumnDef } from '@tanstack/react-table';
 import type { Bookmark } from './bookmark.type';
 import { DataTableColumnHeader } from './table-column-header';
-import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
-import { Badge } from '../ui/badge';
+import { Tooltip, TooltipContent, TooltipTrigger, Badge } from 'valkoma-package/primitive';
 import { Star } from 'lucide-react';
 
 export type ExtendedColumnDef<TData, TValue = unknown> = ColumnDef<TData, TValue> & {
@@ -30,7 +29,7 @@ export const bookmarkColumns: ExtendedColumnDef<Bookmark>[] = [
         header: ({ column }) => <DataTableColumnHeader column={column} title="Favorite" />,
         cell: ({ getValue }) =>
             <div className='flex items-center justify-center'>
-                {getValue<boolean | undefined>() ? <Star className='text-black' size={16} /> : <Star className=' text-gray-200' size={16} />}
+                {getValue<boolean | undefined>() ? <Star size={16} /> : <Star size={16} className='text-black/30 dark:text-white/30'/>}
             </div>,
         enableSorting: true,
         headerAlign: 'center',
@@ -44,13 +43,6 @@ export const bookmarkColumns: ExtendedColumnDef<Bookmark>[] = [
             const { title, url } = row.original;
             return (
                 <span>
-                    {
-                        row.getValue('contentType') ? (
-                            <Badge className='mr-2' variant='outline'>
-                                {String(row.getValue('contentType'))}
-                            </Badge>
-                        ) : null
-                    }
                     <a href={url} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 active:text-primary-800 visited:text-secondary-500 no-underline transition-all duration-300 font-medium"
                     >
                         {title}
@@ -117,7 +109,7 @@ export const bookmarkColumns: ExtendedColumnDef<Bookmark>[] = [
                         <Tooltip>
                             <TooltipTrigger className="line-clamp-3">
                                 {tags.slice(0, 1).map((tag) => (
-                                    <Badge variant='outline'>
+                                    <Badge variant='outline' key={tag}>
                                         {tag}
                                     </Badge>
                                 ))}
@@ -137,7 +129,7 @@ export const bookmarkColumns: ExtendedColumnDef<Bookmark>[] = [
 
                         :
                         tags.map((tag) => (
-                            <Badge variant='outline'>
+                            <Badge variant='outline' key={tag}>
                                 {tag}
                             </Badge>
                         ))}

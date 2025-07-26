@@ -1,8 +1,7 @@
 "use client"
 
-import type { Table } from "@tanstack/react-table"
-import { flexRender } from "@tanstack/react-table"
-import { TableHeader as TableHeaderPrimitive, TableRow, TableHead } from "../ui/table" 
+import { flexRender, type Table } from "@tanstack/react-table"
+import { TableHeader as TableHeaderPrimitive, TableRow, TableHead } from "valkoma-package/primitive"
 import type { ExtendedColumnDef } from "./column"
 
 interface HeaderProps<TData> {
@@ -22,7 +21,6 @@ export function DataTableHeader<TData>({ table }: HeaderProps<TData>) {
                                 : headerAlign === 'right'
                                     ? 'text-right'
                                     : 'text-left';
-
                         return (
                             <TableHead
                                 key={header.id}

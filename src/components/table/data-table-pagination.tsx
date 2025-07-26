@@ -5,8 +5,14 @@ import {
     ChevronsLeft,
     ChevronsRight,
 } from "lucide-react"
-import { Button } from "../ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+    Button
+} from "valkoma-package/primitive"
 
 
 interface DataTablePaginationProps<TData> {
@@ -51,7 +57,7 @@ export function DataTablePagination<TData>({
                     <Button
                         variant="outline"
                         size="icon"
-                        className="hidden size-8 lg:flex h-6 rounded-full"
+                        className="size-8 lg:flex h-6 rounded-full"
                         onClick={() => table.setPageIndex(0)}
                         disabled={!table.getCanPreviousPage()}
                     >
@@ -81,7 +87,7 @@ export function DataTablePagination<TData>({
                     <Button
                         variant="outline"
                         size="icon"
-                        className="hidden size-8 h-6 lg:flex rounded-full"
+                        className="size-8 h-6 lg:flex rounded-full"
                         onClick={() => table.setPageIndex(table.getPageCount() - 1)}
                         disabled={!table.getCanNextPage()}
                     >

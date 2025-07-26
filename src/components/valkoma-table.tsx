@@ -6,7 +6,7 @@ import {
 import {
     Table as TableComponent,
     TableBody,
-} from "@/components/ui/table";
+} from "valkoma-package/primitive";
 import { DataTableNoData } from "./table/data-table-nodata";
 import { DataTableHeader } from "./table/data-table-header";
 import { DataTableContent } from "./table/data-table-content";
